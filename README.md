@@ -61,6 +61,13 @@ dart test
 - I used a PNG for the image of the jug in the banner. I attempted to use an SVG for its handling benefits, but I couldn't find a valid SVG for the challenge. Therefore, I applied the PNG instead.
 - I wrote some units tests to achieve good code coverage. Perhaps with more time, I would write a few more.
 
+1. **Areas for future improvement**
+- With more time, I would reconsider the way the grid was assembled, aiming to make the insertion process more organic.
+- I would write additional units tests given more time.
+- I would consider implementing a response for cases where there is no answer, such as a popup, alert, or similar notification.
+- One idea I had was to create two jugs with a background color, and as the numbers were entered, an event would trigger to gradually change the color of the jug, either increasing or decreasing.
+  
+
 
 
 
