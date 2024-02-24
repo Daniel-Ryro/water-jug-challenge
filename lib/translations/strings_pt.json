@@ -1,0 +1,15 @@
+{
+  "app_title": "Desafio do Jarro de Água",
+  "enter_jug_x_capacity": "Digite a capacidade do Jarro X (X)",
+  "enter_jug_y_capacity": "Digite a capacidade do Jarro Y (Y)",
+  "enter_goal_amount_z": "Digite a quantidade desejada Z",
+  "solve_button": "Resolver",
+  "bucket_x": "Balde X",
+  "bucket_y": "Balde Y",
+  "explanation": "Explicação",
+  "enterValue": "Por favor insira um valor",
+  "enterPositiveValue": "Por favor insira um número inteiro positivo",
+  "fillFields": "Preencha os campos abaixo",
+  "banner_title": "Boas-vindas!",
+  "clear": "Limpar"
+}

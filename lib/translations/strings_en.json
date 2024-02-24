@@ -1,0 +1,15 @@
+{
+  "app_title": "Water Jug Challange",
+  "enter_jug_x_capacity": "Enter capacity of Jug X (X)",
+  "enter_jug_y_capacity": "Enter capacity of Jug Y (Y)",
+  "enter_goal_amount_z": "Enter goal amount Z",
+  "solve_button": "Solve",
+  "bucket_x": "Bucket X",
+  "bucket_y": "Bucket Y",
+  "explanation": "Explanation",
+  "enterValue": "Please enter a value",
+  "enterPositiveValue": "Please enter a positive integer",
+  "fillFields": "Fill in the fields below",
+  "banner_title": "Welcome!",
+  "clear": "Clear"
+}
