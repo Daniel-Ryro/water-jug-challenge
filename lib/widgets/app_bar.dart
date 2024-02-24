@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../constants/text_styles.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class ChallengeAppBar  extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final VoidCallback? onSettingsPressed;
 
-  const CustomAppBar({
+  const ChallengeAppBar ({
     Key? key,
     required this.title,
     this.onSettingsPressed,

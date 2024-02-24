@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
-import '../constants/spacing.dart';
+import '../constants/app_spacings.dart';
 import '../constants/text_styles.dart';
-import '../helpers/localization.dart';
-import 'solution_display_widget.dart';
-import '../controllers/jug_solver.dart';
+import '../helpers/localization_helper.dart';
+import 'solution_display.dart';
+import '../controllers/water_jug_solver.dart';
 import '../models/jug_state.dart';
 
-class JugFormWidget extends StatefulWidget {
-  const JugFormWidget({super.key});
+class WaterJugForm  extends StatefulWidget {
+  const WaterJugForm ({super.key});
 
   @override
-  _JugFormWidgetState createState() => _JugFormWidgetState();
+  _WaterJugFormtState createState() => _WaterJugFormtState();
 }
 
-class _JugFormWidgetState extends State<JugFormWidget> {
+class _WaterJugFormtState extends State<WaterJugForm > {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _xController = TextEditingController();
   final TextEditingController _yController = TextEditingController();
   final TextEditingController _zController = TextEditingController();
-  List<JugState> _solutionSteps = [];
+  List<ChallengeState> _solutionSteps = [];
 
   void _solveJugProblem() {
     if (_formKey.currentState!.validate()) {
@@ -27,7 +27,7 @@ class _JugFormWidgetState extends State<JugFormWidget> {
       final int y = int.tryParse(_yController.text) ?? 0;
       final int z = int.tryParse(_zController.text) ?? 0;
 
-      final JugSolver jugSolver = JugSolver(xCapacity: x, yCapacity: y);
+      final WaterJugSolver jugSolver = WaterJugSolver(xCapacity: x, yCapacity: y);
 
       final steps = jugSolver.solveJugProblem(z);
 
@@ -51,9 +51,9 @@ class _JugFormWidgetState extends State<JugFormWidget> {
 
   String? _validateInput(String? value) {
     if (value == null || value.isEmpty) {
-      return Localization.get('enterValue');
+      return AppLocalization .get('enterValue');
     } else if (int.tryParse(value) == null || int.tryParse(value)! <= 0) {
-      return Localization.get('enterPositiveValue');
+      return AppLocalization .get('enterPositiveValue');
     }
     return null;
   }
@@ -71,7 +71,7 @@ class _JugFormWidgetState extends State<JugFormWidget> {
               TextFormField(
                 controller: _xController,
                 decoration: InputDecoration(
-                  labelText: Localization.get('enter_jug_x_capacity'),
+                  labelText: AppLocalization .get('enter_jug_x_capacity'),
                   labelStyle: AppTextStyles.body,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -88,7 +88,7 @@ class _JugFormWidgetState extends State<JugFormWidget> {
               TextFormField(
                 controller: _yController,
                 decoration: InputDecoration(
-                  labelText: Localization.get('enter_jug_y_capacity'),
+                  labelText: AppLocalization .get('enter_jug_y_capacity'),
                   labelStyle: AppTextStyles.body,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -105,7 +105,7 @@ class _JugFormWidgetState extends State<JugFormWidget> {
               TextFormField(
                 controller: _zController,
                 decoration: InputDecoration(
-                  labelText: Localization.get('enter_goal_amount_z'),
+                  labelText: AppLocalization .get('enter_goal_amount_z'),
                   labelStyle: AppTextStyles.body,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -131,7 +131,7 @@ class _JugFormWidgetState extends State<JugFormWidget> {
                     ),
                   ),
                   child: Text(
-                    Localization.get('solve_button'),
+                    AppLocalization .get('solve_button'),
                     style: AppTextStyles.welcome.copyWith(
                       color: AppColors.backgroundWhite.withOpacity(1),
                     ),
@@ -151,7 +151,7 @@ class _JugFormWidgetState extends State<JugFormWidget> {
                     ),
                   ),
                   child: Text(
-                    Localization.get('Clear'),
+                    AppLocalization .get('Clear'),
                     style: AppTextStyles.welcome.copyWith(
                       color: AppColors.backgroundWhite.withOpacity(1),
                     ),

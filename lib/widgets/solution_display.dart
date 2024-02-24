@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../models/jug_state.dart';
-import 'no_solution_widget.dart';
-import 'solution_available_widget.dart';
+import 'no_solution_message.dart';
+import 'solution_indicator.dart';
 
 class SolutionDisplayWidget extends StatelessWidget {
-  final List<JugState> solutionSteps;
+  final List<ChallengeState> solutionSteps;
 
   const SolutionDisplayWidget({Key? key, required this.solutionSteps})
       : super(key: key);
@@ -12,7 +12,7 @@ class SolutionDisplayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return solutionSteps.isEmpty
-        ? const NoSolutionWidget()
-        : SolutionAvailableWidget(solutionSteps: solutionSteps);
+        ? const NoSolutionIndicator()
+        : SolutionAvailableIndicator(solutionSteps: solutionSteps);
   }
 }

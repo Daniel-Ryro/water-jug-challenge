@@ -1,8 +1,8 @@
-class JugState {
+class ChallengeState {
   int x, y;
   String action;
 
-  JugState(this.x, this.y, this.action);
+  ChallengeState(this.x, this.y, this.action);
 
   @override
   String toString() {

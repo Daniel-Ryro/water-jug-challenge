@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:water_jug_challenge/helpers/localization.dart';
+import 'package:water_jug_challenge/helpers/localization_helper.dart';
 import '../../models/jug_state.dart';
 import '../constants/colors.dart';
 import '../constants/text_styles.dart'; 
 
 class SolutionTable extends StatelessWidget {
-  final List<JugState> solutionSteps;
+  final List<ChallengeState> solutionSteps;
 
   const SolutionTable({Key? key, required this.solutionSteps})
       : super(key: key);
@@ -40,25 +40,25 @@ class SolutionTable extends StatelessWidget {
           columns:  [
             DataColumn(
               label: Text(
-                Localization.get('bucket_x'),
+                AppLocalization .get('bucket_x'),
                 style: AppTextStyles.tabbleBody,
               ),
             ),
             DataColumn(
               label: Text(
-               Localization.get('bucket_y'),
+               AppLocalization .get('bucket_y'),
                 style: AppTextStyles.tabbleBody,
               ),
             ),
             DataColumn(
               label: Text(
-               Localization.get('explanation'),
+               AppLocalization .get('explanation'),
                 style: AppTextStyles.tabbleBody,
               ),
             ),
           ],
           rows: solutionSteps.map(
-            (JugState step) {
+            (ChallengeState step) {
               return DataRow(
                 cells: [
                   DataCell(Text(step.x.toString())),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NoSolutionWidget extends StatelessWidget {
-  const NoSolutionWidget({Key? key}) : super(key: key);
+class NoSolutionIndicator  extends StatelessWidget {
+  const NoSolutionIndicator ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

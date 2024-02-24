@@ -9,7 +9,8 @@
     "explanation": "Explicación",
     "enterValue":  "Porfavor introduzca un valor",
     "enterPositiveValue": "Por favor ingrese un número entero positivo",
-    "fillFields": "Fill in the fields below",
-    "banner_title": "Welcome!",
-    "clear": "Clear"
+    "fillFields": "Complete los campos a continuación",
+    "banner_title": "Bienvenido!",
+    "clear": "Limpiar",
+    "response": "Respuesta"
   }

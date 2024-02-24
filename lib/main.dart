@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:water_jug_challenge/views/home_page.dart';
-import 'package:water_jug_challenge/helpers/localization.dart';
+import 'package:water_jug_challenge/views/water_jug_challenge_page.dart';
+import 'package:water_jug_challenge/helpers/localization_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Locale? deviceLocale = WidgetsBinding.instance.platformDispatcher.locale;
 
-  await Localization.load(deviceLocale);
+  await AppLocalization.load(deviceLocale);
 
   runApp(const MyApp());
 }
@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        Localization.delegate,
+        AppLocalization.delegate,
       ],
       locale: WidgetsBinding.instance.platformDispatcher.locale,
-      supportedLocales: Localization.supportedLocales,
-      home: const HomePage(),
+      supportedLocales: AppLocalization.supportedLocales,
+      home: const ChallengePage(),
     );
   }
 }

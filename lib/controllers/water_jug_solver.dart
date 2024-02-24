@@ -10,14 +10,14 @@ int gcd(int a, int b) {
   return gcd(b, a % b);
 }
 
-class JugSolver {
+class WaterJugSolver  {
   int xCapacity, yCapacity;
 
-  JugSolver({required this.xCapacity, required this.yCapacity});
+  WaterJugSolver ({required this.xCapacity, required this.yCapacity});
 
-  List<JugState> solveJugProblem(int z) {
+  List<ChallengeState> solveJugProblem(int z) {
     if (z > xCapacity + yCapacity || z % gcd(xCapacity, yCapacity) != 0) {
-      return [JugState(0, 0, 'No Solution')];
+      return [ChallengeState(0, 0, 'No Solution')];
     }
 
     Set<String> visited = {};
@@ -25,13 +25,13 @@ class JugSolver {
 
     queue.add([
       [0, 0],
-      <JugState>[]
+      <ChallengeState>[]
     ]);
 
     while (queue.isNotEmpty) {
       var current = queue.removeFirst();
       List<int> state = current[0];
-      List<JugState> path = current[1] as List<JugState>;
+      List<ChallengeState> path = current[1] as List<ChallengeState>;
 
       String stateKey = "${state[0]},${state[1]}";
 
@@ -41,7 +41,7 @@ class JugSolver {
       int x = state[0], y = state[1];
 
       if (x == z || y == z || x + y == z) {
-        path.add(JugState(x, y, 'Solved'));
+        path.add(ChallengeState(x, y, 'Solved'));
         return path;
       }
 
@@ -69,8 +69,8 @@ class JugSolver {
         String nextStateKey = "$nextX,$nextY";
 
         if (!visited.contains(nextStateKey)) {
-          List<JugState> newPath = List.from(path)
-            ..add(JugState(nextX, nextY, action));
+          List<ChallengeState> newPath = List.from(path)
+            ..add(ChallengeState(nextX, nextY, action));
           queue.add([
             [nextX, nextY],
             newPath
@@ -79,6 +79,6 @@ class JugSolver {
       }
     }
 
-    return [JugState(0, 0, 'No Solution')];
+    return [ChallengeState(0, 0, 'No Solution')];
   }
 }

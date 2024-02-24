@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
-import '../constants/spacing.dart';
+import '../constants/app_spacings.dart';
 import '../constants/text_styles.dart';
 
-class BannerWidget extends StatelessWidget {
+class ChallengeBanner extends StatelessWidget {
   final String title;
   final String imagePath;
   final VoidCallback onIconPressed;
   final String subTitle;
 
-  const BannerWidget({
+  const ChallengeBanner({
     super.key,
     required this.title,
     required this.imagePath,

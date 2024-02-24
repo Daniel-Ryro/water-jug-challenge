@@ -11,5 +11,6 @@
   "enterPositiveValue": "Please enter a positive integer",
   "fillFields": "Fill in the fields below",
   "banner_title": "Welcome!",
-  "clear": "Clear"
+  "clear": "Clear",
+  "response": "Response"
 }

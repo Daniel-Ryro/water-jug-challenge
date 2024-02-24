@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
-import '../constants/pading.dart';
+import '../constants/app_paddings.dart';
 import '../constants/text_styles.dart';
+import '../helpers/localization_helper.dart';
 
 class SolutionHeader extends StatelessWidget {
   const SolutionHeader({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class SolutionHeader extends StatelessWidget {
     return Padding(
       padding: AppPadding.solutionHeaderPadding,
       child: Text(
-        'Resultado',
+       AppLocalization .get('response'),
         style: AppTextStyles.welcome.copyWith(
           color: AppColors.textColor,
         ),

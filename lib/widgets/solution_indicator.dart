@@ -3,12 +3,12 @@ import 'package:water_jug_challenge/widgets/solution_header.dart';
 import 'package:water_jug_challenge/widgets/solution_table.dart';
 
 import '../../models/jug_state.dart';
-import '../constants/spacing.dart';
+import '../constants/app_spacings.dart';
 
-class SolutionAvailableWidget extends StatelessWidget {
-  final List<JugState> solutionSteps;
+class SolutionAvailableIndicator  extends StatelessWidget {
+  final List<ChallengeState> solutionSteps;
 
-  const SolutionAvailableWidget({Key? key, required this.solutionSteps})
+  const SolutionAvailableIndicator ({Key? key, required this.solutionSteps})
       : super(key: key);
 
   @override

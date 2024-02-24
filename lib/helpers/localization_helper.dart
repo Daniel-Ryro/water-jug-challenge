@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class Localization {
+class AppLocalization  {
   static late Map<String, String> localizedStrings;
 
-  static Future<Localization> load(Locale locale) async {
+  static Future<AppLocalization > load(Locale locale) async {
     String fileName = 'lib/translations/strings_${locale.languageCode}.json';
 
     try {
@@ -24,14 +24,14 @@ class Localization {
           defaultJsonMap.map((key, value) => MapEntry(key, value.toString()));
     }
 
-    return Localization();
+    return AppLocalization ();
   }
 
   static String get(String key) {
     return localizedStrings[key] ?? key;
   }
 
-  static const LocalizationsDelegate<Localization> delegate =
+  static const LocalizationsDelegate<AppLocalization > delegate =
       _LocalizationDelegate();
 
   static const supportedLocales = [
@@ -41,7 +41,7 @@ class Localization {
   ];
 }
 
-class _LocalizationDelegate extends LocalizationsDelegate<Localization> {
+class _LocalizationDelegate extends LocalizationsDelegate<AppLocalization > {
   const _LocalizationDelegate();
 
   @override
@@ -49,8 +49,8 @@ class _LocalizationDelegate extends LocalizationsDelegate<Localization> {
       ['en', 'es', 'pt'].contains(locale.languageCode);
 
   @override
-  Future<Localization> load(Locale locale) async {
-    return await Localization.load(locale);
+  Future<AppLocalization > load(Locale locale) async {
+    return await AppLocalization .load(locale);
   }
 
   @override
