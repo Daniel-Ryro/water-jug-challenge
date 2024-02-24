@@ -18,6 +18,12 @@ Expected Outcome: A sequence of actions leads to the solution.
 Expected Outcome: No Solution, as 5 isn't a multiple of the GCD of 2 and 6.
 - Test Case 3: xCapacity = 5, yCapacity = 3, z = 0
 Expected Outcome: Solved without action, since the initial state already meets the target.
+- Test Case 4: xCapacity = 7, yCapacity = 11, z = 2
+Expected Outcome: Solution found with a sequence of actions, demonstrating the algorithm's ability to handle larger capacities.
+- Test Case 5: xCapacity = 1, yCapacity = 3, z = 3
+Expected Outcome: "Solved" by filling the 3-liter jug, showcasing the solver's efficiency with straightforward scenarios.
+- Test Case 6: xCapacity = 8, yCapacity = 9, z = 1
+Expected Outcome: A sequence of actions that results in exactly 1 liter, illustrating the solver's capability to deal with close-capacity jugs.
 
 # How to Run the Program
 ## Prerequisites 
