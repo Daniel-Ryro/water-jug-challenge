@@ -5,14 +5,19 @@ import 'package:water_jug_challenge/widgets/solution_table.dart';
 import '../../models/jug_state.dart';
 import '../constants/app_spacings.dart';
 
-class SolutionAvailableIndicator  extends StatelessWidget {
+class SolutionAvailableIndicator extends StatelessWidget {
   final List<ChallengeState> solutionSteps;
 
-  const SolutionAvailableIndicator ({Key? key, required this.solutionSteps})
+  const SolutionAvailableIndicator({Key? key, required this.solutionSteps})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    double tableMaxWidth =
+        MediaQuery.of(context).size.width > 600 ? 600 : screenWidth;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -20,7 +25,12 @@ class SolutionAvailableIndicator  extends StatelessWidget {
         const Center(
           child: SolutionHeader(),
         ),
-        SolutionTable(solutionSteps: solutionSteps),
+        Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: tableMaxWidth),
+            child: SolutionTable(solutionSteps: solutionSteps),
+          ),
+        ),
       ],
     );
   }

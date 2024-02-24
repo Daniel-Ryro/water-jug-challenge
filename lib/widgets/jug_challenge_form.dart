@@ -7,14 +7,14 @@ import 'solution_display.dart';
 import '../controllers/water_jug_solver.dart';
 import '../models/jug_state.dart';
 
-class WaterJugForm  extends StatefulWidget {
-  const WaterJugForm ({super.key});
+class WaterJugForm extends StatefulWidget {
+  const WaterJugForm({super.key});
 
   @override
   _WaterJugFormtState createState() => _WaterJugFormtState();
 }
 
-class _WaterJugFormtState extends State<WaterJugForm > {
+class _WaterJugFormtState extends State<WaterJugForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _xController = TextEditingController();
   final TextEditingController _yController = TextEditingController();
@@ -27,7 +27,8 @@ class _WaterJugFormtState extends State<WaterJugForm > {
       final int y = int.tryParse(_yController.text) ?? 0;
       final int z = int.tryParse(_zController.text) ?? 0;
 
-      final WaterJugSolver jugSolver = WaterJugSolver(xCapacity: x, yCapacity: y);
+      final WaterJugSolver jugSolver =
+          WaterJugSolver(xCapacity: x, yCapacity: y);
 
       final steps = jugSolver.solveJugProblem(z);
 
@@ -46,14 +47,17 @@ class _WaterJugFormtState extends State<WaterJugForm > {
 
     setState(() {
       _solutionSteps = [];
+      _xController.text = '';
+      _yController.text = '';
+      _zController.text = '';
     });
   }
 
   String? _validateInput(String? value) {
     if (value == null || value.isEmpty) {
-      return AppLocalization .get('enterValue');
+      return AppLocalization.get('enterValue');
     } else if (int.tryParse(value) == null || int.tryParse(value)! <= 0) {
-      return AppLocalization .get('enterPositiveValue');
+      return AppLocalization.get('enterPositiveValue');
     }
     return null;
   }
@@ -71,7 +75,7 @@ class _WaterJugFormtState extends State<WaterJugForm > {
               TextFormField(
                 controller: _xController,
                 decoration: InputDecoration(
-                  labelText: AppLocalization .get('enter_jug_x_capacity'),
+                  labelText: AppLocalization.get('enter_jug_x_capacity'),
                   labelStyle: AppTextStyles.body,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -88,7 +92,7 @@ class _WaterJugFormtState extends State<WaterJugForm > {
               TextFormField(
                 controller: _yController,
                 decoration: InputDecoration(
-                  labelText: AppLocalization .get('enter_jug_y_capacity'),
+                  labelText: AppLocalization.get('enter_jug_y_capacity'),
                   labelStyle: AppTextStyles.body,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -105,7 +109,7 @@ class _WaterJugFormtState extends State<WaterJugForm > {
               TextFormField(
                 controller: _zController,
                 decoration: InputDecoration(
-                  labelText: AppLocalization .get('enter_goal_amount_z'),
+                  labelText: AppLocalization.get('enter_goal_amount_z'),
                   labelStyle: AppTextStyles.body,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -131,14 +135,14 @@ class _WaterJugFormtState extends State<WaterJugForm > {
                     ),
                   ),
                   child: Text(
-                    AppLocalization .get('solve_button'),
+                    AppLocalization.get('solve_button'),
                     style: AppTextStyles.welcome.copyWith(
                       color: AppColors.backgroundWhite.withOpacity(1),
                     ),
                   ),
                 ),
               ),
-              AppSpacing.large,             
+              AppSpacing.large,
               SizedBox(
                 width: double.infinity,
                 height: 60,
@@ -151,7 +155,7 @@ class _WaterJugFormtState extends State<WaterJugForm > {
                     ),
                   ),
                   child: Text(
-                    AppLocalization .get('Clear'),
+                    AppLocalization.get('Clear'),
                     style: AppTextStyles.welcome.copyWith(
                       color: AppColors.backgroundWhite.withOpacity(1),
                     ),
