@@ -49,6 +49,11 @@ dart run
 ```
 dart test
 ```
+## Tested devices
+1. Pixel 7 Pro
+2. Iphone 15 Pro Max
+3. Pixel 2
+4. Picel C
 
 ## Developer's Notes
 
