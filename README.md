@@ -33,16 +33,23 @@ Expected Outcome: A sequence of actions that results in exactly 1 liter, illustr
 ## Steps
 
 0. ### Clone the Repository: Fetch the project from GitHub to your local machine with:
-```git clone https://github.com/Daniel-Ryro/water-jug-challenge```
+```
+git clone https://github.com/Daniel-Ryro/water-jug-challenge.git
+```
 
-1. ### Navigate to the Project Directory:
-```cd water_jug_challenge```
+1. ### Navigate to the Project Director:y change into the project directory:
+```
+cd water_jug_challenge
+```
+2. ### Run the Program: execute the program by running:
+```
+dart run
+```
+3. ### Running Tests Execute the test suite to verify the implementation:
+```
+dart test
+```
 
-2. ### Run the Program:
-```dart run```
-
-3. ### Running Tests: Execute the test suite to verify the implementation:
-```dart test```
 
 
 
