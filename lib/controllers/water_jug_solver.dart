@@ -30,9 +30,8 @@ class WaterJugSolver {
 
     while (queue.isNotEmpty) {
       var current = queue.removeFirst();
-      List<int> state = current[0] as List<int>; // Cast para List<int>
-      List<ChallengeState> path =
-          current[1] as List<ChallengeState>; // Cast para List<ChallengeState>
+      List<int> state = current[0] as List<int>;
+      List<ChallengeState> path = current[1] as List<ChallengeState>;
 
       String stateKey = "${state[0]},${state[1]}";
 
