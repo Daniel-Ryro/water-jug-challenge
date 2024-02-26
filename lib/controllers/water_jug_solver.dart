@@ -10,10 +10,10 @@ int gcd(int a, int b) {
   return gcd(b, a % b);
 }
 
-class WaterJugSolver  {
+class WaterJugSolver {
   int xCapacity, yCapacity;
 
-  WaterJugSolver ({required this.xCapacity, required this.yCapacity});
+  WaterJugSolver({required this.xCapacity, required this.yCapacity});
 
   List<ChallengeState> solveJugProblem(int z) {
     if (z > xCapacity + yCapacity || z % gcd(xCapacity, yCapacity) != 0) {
@@ -30,8 +30,9 @@ class WaterJugSolver  {
 
     while (queue.isNotEmpty) {
       var current = queue.removeFirst();
-      List<int> state = current[0];
-      List<ChallengeState> path = current[1] as List<ChallengeState>;
+      List<int> state = current[0] as List<int>; // Cast para List<int>
+      List<ChallengeState> path =
+          current[1] as List<ChallengeState>; // Cast para List<ChallengeState>
 
       String stateKey = "${state[0]},${state[1]}";
 
@@ -40,7 +41,7 @@ class WaterJugSolver  {
 
       int x = state[0], y = state[1];
 
-      if (x == z || y == z || x + y == z) {
+      if (x == z || y == z) {
         path.add(ChallengeState(x, y, 'Solved'));
         return path;
       }
@@ -66,6 +67,7 @@ class WaterJugSolver  {
         int nextX = nextState[0] as int;
         int nextY = nextState[1] as int;
         String action = nextState[2] as String;
+
         String nextStateKey = "$nextX,$nextY";
 
         if (!visited.contains(nextStateKey)) {
