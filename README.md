@@ -49,6 +49,11 @@ dart run
 ```
 dart test
 ```
+## Tested devices
+1. Pixel 7 Pro
+2. Iphone 15 Pro Max
+3. Pixel 2
+4. Picel C
 
 ## Developer's Notes
 
@@ -60,7 +65,8 @@ dart test
 - I used the following libraries and their versions: cupertino_icons, flutter_localization
 - I used a PNG for the image of the jug in the banner. I attempted to use an SVG for its handling benefits, but I couldn't find a valid SVG for the challenge. Therefore, I applied the PNG instead.
 - I wrote some units tests to achieve good code coverage. Perhaps with more time, I would write a few more.
-
+- I thought about blocking the keyboard only for numbers, but to test the mask, I enabled letters on the computer keyboard
+  
 1. **Areas for future improvement**
 - With more time, I would reconsider the way the grid was assembled, aiming to make the insertion process more organic.
 - I would write additional units tests given more time.
